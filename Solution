@@ -12,6 +12,7 @@ public class TwoSum {
         
         
         int[] sortedArray = sortAndFlattenArray(result);
+        System.out.println("Sorted Array:");
         System.out.println(Arrays.toString(sortedArray));
 
      
@@ -24,7 +25,7 @@ public class TwoSum {
     }
     
     
-// Finding the pairs
+// Functionality to Finding the pairs
 
     public static int[][] findPairsWithSum(int[] nums, int target) {
         int[][] result = new int[nums.length][2];
@@ -44,10 +45,7 @@ public class TwoSum {
     }
     
 
-
-
-
-// Print in 2d Array
+// Functionality to Print in 2d Array
 
     public static void printArray(int[][] array) {
         for (int[] pair : array) {
@@ -57,9 +55,7 @@ public class TwoSum {
     }
     
     
-    
-    
-//Shorting the Array
+// Functionality to Short the Array
     
     public static int[] sortAndFlattenArray(int[][] result) {
         int totalElements = 0;
