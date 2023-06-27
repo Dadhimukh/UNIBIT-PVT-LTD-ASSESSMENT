@@ -7,6 +7,10 @@ public class TwoSum {
 
         int[][] result = findPairsWithSum(nums, target);
             printArray(result);
+            
+                    int[] sortedArray = sortAndFlattenArray(result);
+        System.out.println(Arrays.toString(sortedArray));
+
     }
 
     public static int[][] findPairsWithSum(int[] nums, int target) {
@@ -25,6 +29,8 @@ public class TwoSum {
 
         return Arrays.copyOf(result, count);
     }
+    
+
 
     public static void printArray(int[][] array) {
         for (int[] pair : array) {
@@ -32,4 +38,27 @@ public class TwoSum {
         }
         System.out.println();
     }
+    
+    
+            public static int[] sortAndFlattenArray(int[][] result) {
+        int totalElements = 0;
+        for (int[] row : result) {
+            totalElements += row.length;
+        }
+
+        int[] flattenedArray = new int[totalElements];
+        int index = 0;
+
+        for (int[] row : result) {
+            for (int element : row) {
+                flattenedArray[index] = element;
+                index++;
+            }
+        }
+
+        Arrays.sort(flattenedArray);
+
+        return flattenedArray;
+    }
+
 }
