@@ -1,0 +1,35 @@
+import java.util.Arrays;
+
+public class TwoSum {
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 2, 2, -4, -6, -2, 8};
+        int target = 4;
+
+        int[][] result = findPairsWithSum(nums, target);
+            printArray(result);
+    }
+
+    public static int[][] findPairsWithSum(int[] nums, int target) {
+        int[][] result = new int[nums.length][2];
+        int count = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    result[count][0] = nums[i];
+                    result[count][1] = nums[j];
+                    count++;
+                }
+            }
+        }
+
+        return Arrays.copyOf(result, count);
+    }
+
+    public static void printArray(int[][] array) {
+        for (int[] pair : array) {
+            System.out.print("[" + pair[0] + ", " + pair[1] + "]");
+        }
+        System.out.println();
+    }
+}
